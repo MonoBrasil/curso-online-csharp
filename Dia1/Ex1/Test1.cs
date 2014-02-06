@@ -12,26 +12,28 @@ namespace Ex1
 			Pessoa p = new Pessoa(); p.setNome("Jose");
 			p.setAno(1998);
 
-			Assertion.AssertEquals(p.getAno(),1998);
+			Assert.AreEqual(p.getAno(),1998);
 		}
 
 		[Test]
 		public void TestPessoaFisica()
 		{
 			PessoaFisica pf= new PessoaFisica("Soares");
-			pf.setCPF("5718887500");
+            pf.setCPF("45647782507");
 			pf.setNascimento(2000);
 			pf.setRG("55666-10");
 
 			Assert.AreEqual("Soares", pf.getNome()); 
-			Assert.AreEqual(6, pf.getIdade());
-			Assert.AreEqual(true, pf.EPessoaFisica());
+			Assert.AreNotEqual(6, pf.getIdade());
+            Assert.AreEqual(14, pf.getIdade());
+            Assert.AreEqual(2000, pf.getAno());
+			Assert.AreEqual(true, pf.EhPessoaFisica()); //Testa se é uma pessoa física
 		}
 
 		[Test]
 		public void TestPessoaJuridica()
 		{
-			PessoaJuridica pj = new PessoaJuridica("univale","555111/0001-10");
+            PessoaJuridica pj = new PessoaJuridica("univale", "20374307000160");
 			Endereco end = new Endereco();
 			end.setRua("XV Novembro");
 			end.setBairro("Centro");
@@ -46,7 +48,7 @@ namespace Ex1
 		public void TestValidaPessoaFisica()
 		{
 			PessoaFisica pf= new PessoaFisica("Soares");
-			pf.setCPF("5718887500");
+            pf.setCPF("14279871817");
 			pf.setNascimento(2000);
 			pf.setRG("55666-10");
 
@@ -56,7 +58,7 @@ namespace Ex1
 		[Test]
 		public void TestValidaPessoaJuridica()
 		{
-			PessoaJuridica pj = new PessoaJuridica("univale","555111/0001-10");
+            PessoaJuridica pj = new PessoaJuridica("univale", "538037540001461");
 			Endereco end = new Endereco();
 			end.setRua("XV Novembro");
 			end.setBairro("Centro");

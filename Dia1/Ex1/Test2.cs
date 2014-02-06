@@ -16,7 +16,7 @@ namespace Ex1
 			Assert.AreEqual (270, irpf.Calcula (1000));
 		}
 
-		[Test(), ExpectedException(ArgumentException)]
+		[Test(), ExpectedException(typeof(ArgumentException))]
 		public void TestIRPF2 ()
 		{
 			PessoaJuridica pj = CriaPessoaJuridica ();
@@ -29,12 +29,12 @@ namespace Ex1
 		{
 			PessoaJuridica pj = CriaPessoaJuridica ();
 
-			Imposto irpf = new Irpf (pf);
+			Imposto irpf = new Irpf (pj);
 			Assert.AreEqual (0.12, irpf.Aliquota);
 			Assert.AreEqual (120, irpf.Calcula (1000));
 		}
 
-		[Test(), ExpectedException(ArgumentException)]
+		[Test(), ExpectedException(typeof(ArgumentException))]
 		public void TestIRPJ2 ()
 		{
 			PessoaFisica pf = CriaPessoaFisica ();
