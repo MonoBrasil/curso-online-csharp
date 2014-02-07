@@ -27,7 +27,7 @@ namespace Ex1
 			Assert.AreNotEqual(6, pf.getIdade());
             Assert.AreEqual(14, pf.getIdade());
             Assert.AreEqual(2000, pf.getAno());
-			Assert.AreEqual(true, pf.EhPessoaFisica()); //Testa se é uma pessoa física
+			Assert.AreEqual(true, pf.EhPessoaFisica()); //Testa se ï¿½ uma pessoa fï¿½sica
 		}
 
 		[Test]
@@ -41,7 +41,7 @@ namespace Ex1
 			end.setAtivo(true);
 			pj.setEndereco(end);
 
-			Assert.AreEqual("555111/0001-10", pj.getCNPJ());
+			Assert.AreEqual("20374307000160", pj.getCNPJ());
 		}
 
 		[Test]
